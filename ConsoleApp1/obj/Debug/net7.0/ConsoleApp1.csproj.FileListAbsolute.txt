@@ -1,0 +1,5 @@
+D:\Работа\GitProject\MVCApplicationTestTask\ConsoleApp1\obj\Debug\net7.0\ConsoleApp1.csproj.AssemblyReference.cache
+D:\Работа\GitProject\MVCApplicationTestTask\ConsoleApp1\obj\Debug\net7.0\ConsoleApp1.GeneratedMSBuildEditorConfig.editorconfig
+D:\Работа\GitProject\MVCApplicationTestTask\ConsoleApp1\obj\Debug\net7.0\ConsoleApp1.AssemblyInfoInputs.cache
+D:\Работа\GitProject\MVCApplicationTestTask\ConsoleApp1\obj\Debug\net7.0\ConsoleApp1.AssemblyInfo.cs
+D:\Работа\GitProject\MVCApplicationTestTask\ConsoleApp1\obj\Debug\net7.0\ConsoleApp1.csproj.CoreCompileInputs.cache

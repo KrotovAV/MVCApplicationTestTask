@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5oFu73VV8aAN6Qj9KQzaQ7qlHozyxSRIScHBG+2ry44kRftu/CPo8s+FIQqP8jPCVCE2hWo6wBgoiPx6UjHv4Q==",
+  "dgSpecHash": "aZtf3ixK9K3IR7+HW/oNPS6U3FxD+j/pHFdFLk8/PEOAbklrmlIDo4P5ObYTgG+5u2ofGS1CuQdCNF+8t+jLDw==",
   "success": true,
-  "projectFilePath": "D:\\Работа\\GitProject\\MVCApplicationTestTask\\WebApplication1\\WebApplication1.csproj",
+  "projectFilePath": "D:\\Работа\\GitProject\\MVCApplicationTestTask\\WebApplication1\\WebApplicationMVC.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
