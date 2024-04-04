@@ -1,0 +1,29 @@
+﻿@using WebApplicationMVC.Models;
+
+@model OrganizationModel
+@{
+    ViewData["Title"] = "Добавить организацию";
+}
+
+<h1>Добавить организацию</h1>
+
+<form method="post" asp-controller="Organization" asp-action="Check">
+
+    <label asp-for="Name"></label>
+    <input asp-for="Name" />
+    <span asp-validation-for="Name"></span>
+
+    <label asp-for="Inn"></label>
+    <input asp-for="Inn" />
+    <span asp-validation-for="Inn"></span>
+
+    <label asp-for="AdressUri"></label>
+    <input asp-for="AdressUri" />
+    <span asp-validation-for="AdressUri"></span>
+
+    <label asp-for="AdressFact"></label>
+    <input asp-for="AdressFact" />
+    <span asp-validation-for="AdressFact"></span>
+
+    <input type="submit" value="Добавить" />
+</form>

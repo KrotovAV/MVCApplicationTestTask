@@ -12,7 +12,7 @@ namespace DataBase
 {
     //    dotnet ef migrations add InitialMigration 
     //    dotnet ef database update
-    internal class DataBaseContext : DbContext
+    public class DataBaseContext : DbContext
     {
 
         public virtual DbSet<Organization> Organizations { get; set; }

@@ -1,0 +1,36 @@
+﻿@using WebApplicationMVC.Models;
+
+@model EmployeeModel
+@{
+    ViewData["Title"] = "Добавить сотрудника";
+}
+
+<h1>Добавить сотрудника</h1>
+
+<form method="post" asp-controller="Employee" asp-action="Check">
+    <label asp-for="SurName"></label>
+    <input asp-for="SurName" />
+    <span asp-validation-for="SurName"></span>
+
+    <label asp-for="Name"></label>
+    <input asp-for="Name" />
+    <span asp-validation-for="Name"></span>
+
+    <label asp-for="SecondName"></label>
+    <input asp-for="SecondName" />
+    <span asp-validation-for="SecondName"></span>
+
+    <label asp-for="BirthDate "></label>
+    <input asp-for="BirthDate" />
+    <span asp-validation-for="BirthDate"></span>
+
+    <label asp-for="SeriaPassport"></label>
+    <input asp-for="SeriaPassport" />
+    <span asp-validation-for="SeriaPassport"></span>
+
+    <label asp-for="NumberPassport"></label>
+    <input asp-for="NumberPassport" />
+    <span asp-validation-for="NumberPassport"></span>
+
+    <input type="submit" value="Добавить" />
+</form>

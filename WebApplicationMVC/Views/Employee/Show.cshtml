@@ -1,0 +1,23 @@
+﻿@using WebApplicationMVC.Models;
+
+@model IEnumerable<EmployeeModel>
+@{
+    ViewData["Title"] = "Показать всех сотрудников";
+}
+
+<h1>Показать всех сотрудников</h1>
+   
+
+<div class="row">
+    <h4>Сотрудники</h4>
+    <div class="col-md-12">
+        @foreach (var user in Model)
+        {
+            <p>
+                <strong>
+                @user.SurName | @user.Name | @user.SecondName | @user.BirthDate | @user.SeriaPassport | @user.NumberPassport
+                </strong>
+            </p>
+        }
+    </div>
+</div>
