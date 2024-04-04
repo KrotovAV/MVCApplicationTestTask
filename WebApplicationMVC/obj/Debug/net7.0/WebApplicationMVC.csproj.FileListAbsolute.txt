@@ -109,3 +109,5 @@ D:\Работа\GitProject\MVCApplicationTestTask\WebApplicationMVC\bin\Debug\ne
 D:\Работа\GitProject\MVCApplicationTestTask\WebApplicationMVC\bin\Debug\net7.0\DataBase.pdb
 D:\Работа\GitProject\MVCApplicationTestTask\WebApplicationMVC\obj\Debug\net7.0\WebApplicationMVC.csproj.AssemblyReference.cache
 D:\Работа\GitProject\MVCApplicationTestTask\WebApplicationMVC\obj\Debug\net7.0\WebApplicationMVC.csproj.CopyComplete
+D:\Работа\GitProject\MVCApplicationTestTask\WebApplicationMVC\bin\Debug\net7.0\BuissnessLayer.dll
+D:\Работа\GitProject\MVCApplicationTestTask\WebApplicationMVC\bin\Debug\net7.0\BuissnessLayer.pdb

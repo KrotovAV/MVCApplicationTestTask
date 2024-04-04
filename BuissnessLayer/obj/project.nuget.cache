@@ -1,10 +1,9 @@
 {
   "version": 2,
-  "dgSpecHash": "KD1+j0yWf4tOnT0SFYh11rDcqVukF9/o83RyPBQ+4TbVQGL2Qme423WvnBYotHx5oiZXjiURQuFhAqkuJhRBzQ==",
+  "dgSpecHash": "8LbsDoJYXImEKN9/3zi6wNe7ch5TyrrtYOamlriI4QlIkwV4i8ZgRZ8R+QxLJRSBxw7p9VJhPTBwROQPT0SkuQ==",
   "success": true,
-  "projectFilePath": "D:\\Работа\\GitProject\\MVCApplicationTestTask\\WebApplicationMVC\\WebApplicationMVC.csproj",
+  "projectFilePath": "D:\\Работа\\GitProject\\MVCApplicationTestTask\\BuissnessLayer\\BuissnessLayer.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\10\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\10\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\10\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
     "C:\\Users\\10\\.nuget\\packages\\castle.core\\5.1.0\\castle.core.5.1.0.nupkg.sha512",

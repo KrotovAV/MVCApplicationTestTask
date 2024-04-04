@@ -2,22 +2,6 @@
   "version": 3,
   "targets": {
     "net7.0": {
-      "AutoMapper/13.0.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Options": "6.0.0"
-        },
-        "compile": {
-          "lib/net6.0/AutoMapper.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/AutoMapper.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "Azure.Core/1.25.0": {
         "type": "package",
         "dependencies": {
@@ -1161,19 +1145,6 @@
           }
         }
       },
-      "BuissnessLayer/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "DataBase": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/BuissnessLayer.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/BuissnessLayer.dll": {}
-        }
-      },
       "DataBase/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -1194,21 +1165,6 @@
     }
   },
   "libraries": {
-    "AutoMapper/13.0.1": {
-      "sha512": "/Fx1SbJ16qS7dU4i604Sle+U9VLX+WSNVJggk6MupKVkYvvBm4XqYaeFuf67diHefHKHs50uQIS2YEDFhPCakQ==",
-      "type": "package",
-      "path": "automapper/13.0.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "README.md",
-        "automapper.13.0.1.nupkg.sha512",
-        "automapper.nuspec",
-        "icon.png",
-        "lib/net6.0/AutoMapper.dll",
-        "lib/net6.0/AutoMapper.xml"
-      ]
-    },
     "Azure.Core/1.25.0": {
       "sha512": "X8Dd4sAggS84KScWIjEbFAdt2U1KDolQopTPoHVubG2y3CM54f9l6asVrP5Uy384NWXjsspPYaJgz5xHc+KvTA==",
       "type": "package",
@@ -3150,11 +3106,6 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "BuissnessLayer/1.0.0": {
-      "type": "project",
-      "path": "../BuissnessLayer/BuissnessLayer.csproj",
-      "msbuildProject": "../BuissnessLayer/BuissnessLayer.csproj"
-    },
     "DataBase/1.0.0": {
       "type": "project",
       "path": "../DataBase/DataBase.csproj",
@@ -3163,8 +3114,6 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "AutoMapper >= 13.0.1",
-      "BuissnessLayer >= 1.0.0",
       "DataBase >= 1.0.0"
     ]
   },
@@ -3174,11 +3123,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Работа\\GitProject\\MVCApplicationTestTask\\WebApplicationMVC\\WebApplicationMVC.csproj",
-      "projectName": "WebApplicationMVC",
-      "projectPath": "D:\\Работа\\GitProject\\MVCApplicationTestTask\\WebApplicationMVC\\WebApplicationMVC.csproj",
+      "projectUniqueName": "D:\\Работа\\GitProject\\MVCApplicationTestTask\\BuissnessLayer\\BuissnessLayer.csproj",
+      "projectName": "BuissnessLayer",
+      "projectPath": "D:\\Работа\\GitProject\\MVCApplicationTestTask\\BuissnessLayer\\BuissnessLayer.csproj",
       "packagesPath": "C:\\Users\\10\\.nuget\\packages\\",
-      "outputPath": "D:\\Работа\\GitProject\\MVCApplicationTestTask\\WebApplicationMVC\\obj\\",
+      "outputPath": "D:\\Работа\\GitProject\\MVCApplicationTestTask\\BuissnessLayer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\10\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3195,9 +3144,6 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "D:\\Работа\\GitProject\\MVCApplicationTestTask\\BuissnessLayer\\BuissnessLayer.csproj": {
-              "projectPath": "D:\\Работа\\GitProject\\MVCApplicationTestTask\\BuissnessLayer\\BuissnessLayer.csproj"
-            },
             "D:\\Работа\\GitProject\\MVCApplicationTestTask\\DataBase\\DataBase.csproj": {
               "projectPath": "D:\\Работа\\GitProject\\MVCApplicationTestTask\\DataBase\\DataBase.csproj"
             }
@@ -3213,12 +3159,6 @@
     "frameworks": {
       "net7.0": {
         "targetAlias": "net7.0",
-        "dependencies": {
-          "AutoMapper": {
-            "target": "Package",
-            "version": "[13.0.1, )"
-          }
-        },
         "imports": [
           "net461",
           "net462",
@@ -3231,9 +3171,6 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
-          "Microsoft.AspNetCore.App": {
-            "privateAssets": "none"
-          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }

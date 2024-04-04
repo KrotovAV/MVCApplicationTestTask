@@ -6,6 +6,7 @@ using DataBase;
 using DataBase.DB;
 using AutoMapper;
 using System.Collections.Specialized;
+using BuissnessLayer.Interfaces;
 
 namespace WebApplicationMVC.Controllers
 {
@@ -14,11 +15,14 @@ namespace WebApplicationMVC.Controllers
         private readonly ILogger<EmployeeController> _logger;
         private DataBaseContext _context;
         private IMapper _mapper;
-        public EmployeeController(ILogger<EmployeeController> logger, DataBaseContext context, IMapper mapper)
+        private IOrganizationsRepository _organizationsRepo;
+        public EmployeeController(ILogger<EmployeeController> logger, DataBaseContext context, 
+            IMapper mapper, IOrganizationsRepository organizationsRepo)
         {
             _logger = logger;
             _context = context;
             _mapper = mapper;
+            _organizationsRepo = organizationsRepo;
         }
         //public EmployeeController(ILogger<EmployeeController> logger, DataBaseContext context)
         //{

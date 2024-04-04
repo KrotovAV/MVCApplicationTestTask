@@ -1,3 +1,6 @@
+using BuissnessLayer;
+using BuissnessLayer.Implementions;
+using BuissnessLayer.Interfaces;
 using DataBase;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
@@ -12,11 +15,15 @@ namespace WebApplication1
             var builder = WebApplication.CreateBuilder(args);
 
             builder.Services.AddAutoMapper(typeof(MapperProfile));
-           
+            
             builder.Services.AddControllersWithViews();
 
             string connectionStr = builder.Configuration.GetConnectionString("Connection");
             builder.Services.AddDbContext<DataBaseContext>(options => options.UseSqlServer(connectionStr));
+
+            builder.Services.AddTransient<IEmployeesRepository, EFEmployeesRepository>();
+            builder.Services.AddTransient<IOrganizationsRepository, EFOrganizationsRepository>();
+            builder.Services.AddScoped<DataManager>();
 
             var app = builder.Build();
 
