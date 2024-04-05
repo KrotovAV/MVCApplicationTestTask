@@ -11,6 +11,8 @@ using System.Threading.Tasks;
 
 namespace BuissnessLayer.Implementions
 {
+    //Material > Employee
+    //Directory > Organization
     public class EFOrganizationsRepository : IOrganizationsRepository
     {
         private DataBaseContext _context;
@@ -27,8 +29,8 @@ namespace BuissnessLayer.Implementions
         public IEnumerable<Organization> GetAllOrganizations(bool includeEmployee = false)
         {
             if (includeEmployee)
-                return _context.Set<Organization>().ToList();
-                //return _context.Set<Organization>().Include(x => x.Materials).AsNoTracking().ToList();
+                //return _context.Set<Organization>().ToList();
+                return _context.Set<Organization>().Include(x => x.Employees).AsNoTracking().ToList();
             else
                 return _context.Organizations.ToList();
         }

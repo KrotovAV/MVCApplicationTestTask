@@ -17,14 +17,14 @@ namespace DataBase.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
-                    Inn = table.Column<int>(type: "int", maxLength: 9, nullable: false),
-                    AdressUri = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    AdressFact = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    name = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    inn = table.Column<int>(type: "int", maxLength: 9, nullable: false),
+                    uriadress = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    factadress = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_organization", x => x.Id);
+                    table.PrimaryKey("organization_primary_key", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -33,22 +33,23 @@ namespace DataBase.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    SurName = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
-                    SecondName = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
-                    BirthDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    SeriaPassport = table.Column<string>(type: "nvarchar(2)", maxLength: 2, nullable: false),
-                    NumberPassport = table.Column<int>(type: "int", maxLength: 7, nullable: false),
-                    OrganizationId = table.Column<int>(type: "int", nullable: true)
+                    surname = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    name = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    secondname = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    birthdata = table.Column<DateTime>(type: "date", nullable: false),
+                    seriapass = table.Column<string>(type: "nvarchar(2)", maxLength: 2, nullable: false),
+                    numberpass = table.Column<int>(type: "int", maxLength: 7, nullable: false),
+                    OrganizationId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_employee", x => x.Id);
+                    table.PrimaryKey("employee_primary_key", x => x.Id);
                     table.ForeignKey(
                         name: "FK_employee_organization_OrganizationId",
                         column: x => x.OrganizationId,
                         principalTable: "organization",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(

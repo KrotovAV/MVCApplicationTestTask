@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataBase.Migrations
 {
     [DbContext(typeof(DataBaseContext))]
-    [Migration("20240402115408_InitialMigration")]
+    [Migration("20240404193324_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -37,36 +37,43 @@ namespace DataBase.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("BirthDate")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("date")
+                        .HasColumnName("birthdata");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
+                        .HasColumnType("nvarchar(255)")
+                        .HasColumnName("name");
 
                     b.Property<int>("NumberPassport")
                         .HasMaxLength(7)
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("numberpass");
 
-                    b.Property<int?>("OrganizationId")
+                    b.Property<int>("OrganizationId")
                         .HasColumnType("int");
 
                     b.Property<string>("SecondName")
                         .IsRequired()
                         .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
+                        .HasColumnType("nvarchar(255)")
+                        .HasColumnName("secondname");
 
                     b.Property<string>("SeriaPassport")
                         .IsRequired()
                         .HasMaxLength(2)
-                        .HasColumnType("nvarchar(2)");
+                        .HasColumnType("nvarchar(2)")
+                        .HasColumnName("seriapass");
 
                     b.Property<string>("SurName")
                         .IsRequired()
                         .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
+                        .HasColumnType("nvarchar(255)")
+                        .HasColumnName("surname");
 
-                    b.HasKey("Id");
+                    b.HasKey("Id")
+                        .HasName("employee_primary_key");
 
                     b.HasIndex("OrganizationId");
 
@@ -83,22 +90,27 @@ namespace DataBase.Migrations
 
                     b.Property<string>("AdressFact")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("factadress");
 
                     b.Property<string>("AdressUri")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("uriadress");
 
                     b.Property<int>("Inn")
                         .HasMaxLength(9)
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("inn");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
+                        .HasColumnType("nvarchar(255)")
+                        .HasColumnName("name");
 
-                    b.HasKey("Id");
+                    b.HasKey("Id")
+                        .HasName("organization_primary_key");
 
                     b.ToTable("organization", (string)null);
                 });
@@ -107,7 +119,9 @@ namespace DataBase.Migrations
                 {
                     b.HasOne("DataBase.DB.Organization", "Organization")
                         .WithMany("Employees")
-                        .HasForeignKey("OrganizationId");
+                        .HasForeignKey("OrganizationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Organization");
                 });

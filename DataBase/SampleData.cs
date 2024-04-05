@@ -42,7 +42,7 @@ namespace DataBase
                     BirthDate = new DateTime(2000, 4, 16),
                     SeriaPassport = "KB",
                     NumberPassport = 1234567,
-                    Organization = org1
+                    OrganizationId = 1
                 };
 
                 Employee KoliaKolin = new Employee
@@ -53,7 +53,7 @@ namespace DataBase
                     BirthDate = new DateTime(2001, 4, 16),
                     SeriaPassport = "KB",
                     NumberPassport = 2345678,
-                    Organization = org1
+                    OrganizationId = 2
                 };
                 Employee MisaMishin = new Employee
                 {
@@ -63,7 +63,7 @@ namespace DataBase
                     BirthDate = new DateTime(2001, 4, 16),
                     SeriaPassport = "KB",
                     NumberPassport = 2345678,
-                    Organization = org1
+                    OrganizationId = 1
                 };
                 context.Employees.AddRange(VasiaVasin, KoliaKolin, MisaMishin);
 

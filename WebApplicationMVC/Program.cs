@@ -14,16 +14,25 @@ namespace WebApplication1
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            builder.Services.AddAutoMapper(typeof(MapperProfile));
-            
             builder.Services.AddControllersWithViews();
 
-            string connectionStr = builder.Configuration.GetConnectionString("Connection");
-            builder.Services.AddDbContext<DataBaseContext>(options => options.UseSqlServer(connectionStr));
-
+            //--------------
+            //string connectionStr = builder.Configuration.GetConnectionString("Connection");
+            //builder.Services.AddDbContext<DataBaseContext>(options => options.UseSqlServer(connectionStr));
+            
+            builder.Services.AddAutoMapper(typeof(MapperProfile));
             builder.Services.AddTransient<IEmployeesRepository, EFEmployeesRepository>();
             builder.Services.AddTransient<IOrganizationsRepository, EFOrganizationsRepository>();
             builder.Services.AddScoped<DataManager>();
+
+            //----
+            builder.Services.AddSingleton<DataBaseContext>();
+            builder.Configuration.GetConnectionString("Connection");
+
+            var confBuilder = new ConfigurationBuilder();
+            confBuilder.SetBasePath(Directory.GetCurrentDirectory());
+            confBuilder.AddJsonFile("appsettings.json");
+            //----
 
             var app = builder.Build();
 

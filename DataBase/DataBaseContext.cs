@@ -40,49 +40,63 @@ namespace DataBase
         {
             modelBuilder.Entity<Employee>(entity =>
             {
-                entity.HasKey(e => e.Id);
-
+                
                 entity.ToTable("employee");
+
+                entity.HasKey(e => e.Id)
+                    .HasName("employee_primary_key");
 
                 entity.Property(e => e.SurName)
                     .IsRequired()
-                    .HasMaxLength(255);
+                    .HasMaxLength(255)
+                    .HasColumnName("surname");
                 entity.Property(e => e.Name)
                     .IsRequired()
-                    .HasMaxLength(255);
+                    .HasMaxLength(255)
+                    .HasColumnName("name");
                 entity.Property(e => e.SecondName)
                     .IsRequired()
-                    .HasMaxLength(255);
+                    .HasMaxLength(255)
+                    .HasColumnName("secondname");
                 entity.Property(e => e.BirthDate)
-                    .IsRequired();
+                    .IsRequired()
+                    .HasColumnName("birthdata");
                 entity.Property(e => e.SeriaPassport)
                     .IsRequired()
-                    .HasMaxLength(2);
+                    .HasMaxLength(2)
+                    .HasColumnName("seriapass");
                 entity.Property(e => e.NumberPassport)
                     .IsRequired()
-                    .HasMaxLength(7);
-                //entity.Property(e => e.Organization)
-                //    .IsRequired();
+                    .HasMaxLength(7)
+                    .HasColumnName("numberpass");
 
+                entity.HasOne(u => u.Organization)
+                        .WithMany(c => c.Employees)
+                        .HasForeignKey(u => u.OrganizationId);
             });
 
 
             modelBuilder.Entity<Organization>(entity =>
             {
-                entity.HasKey(e => e.Id);
-
                 entity.ToTable("organization");
+
+                entity.HasKey(e => e.Id)
+                    .HasName("organization_primary_key");
 
                 entity.Property(e => e.Name)
                     .IsRequired()
-                    .HasMaxLength(255);
+                    .HasMaxLength(255)
+                    .HasColumnName("name");
                 entity.Property(e => e.Inn)
                     .IsRequired()
-                    .HasMaxLength(9);
+                    .HasMaxLength(9)
+                    .HasColumnName("inn");
                 entity.Property(e => e.AdressUri)
-                    .IsRequired();
+                    .IsRequired()
+                    .HasColumnName("uriadress");
                 entity.Property(e => e.AdressFact)
-                    .IsRequired();
+                    .IsRequired()
+                    .HasColumnName("factadress");
 
             });
         }

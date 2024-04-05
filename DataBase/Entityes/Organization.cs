@@ -9,6 +9,8 @@ namespace DataBase.DB
     public class Organization
     {
         // организации (Наименование, ИНН, юр. адрес, факт. адрес
+        //Directory > Organization
+        //Material > Employee
         public int Id { set; get; }
         public string Name { set; get; }
         public int Inn { set; get; }
